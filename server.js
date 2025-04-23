@@ -11,7 +11,8 @@ app.use(cors({
 
 app.get('/movies', async(req, res)=>{
   const movies = await axios.get("https://freetestapi.com/api/v1/movies")
-  return res.send(movies.json());
+  const data = movies.data
+  return res.send(data);
 })
 
 app.listen(3000, ()=>{
